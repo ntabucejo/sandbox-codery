@@ -1,6 +1,6 @@
 import Form from "./form";
 
-const Page = async () => {
+const Page = () => {
   return (
     <div>
       {/* @ts-ignore */}

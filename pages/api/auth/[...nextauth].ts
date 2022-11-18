@@ -37,12 +37,12 @@ export default NextAuth({
     }),
   ],
   callbacks: {
+    async session({ session, token }) {
+      return { ...session, id: token.sub };
+    },
     async signIn({ user }) {
       if (user) return true;
       return false;
-    },
-    async redirect({ baseUrl }) {
-      return baseUrl;
     },
     async jwt({ token }) {
       const user = await prisma.user.findUnique({

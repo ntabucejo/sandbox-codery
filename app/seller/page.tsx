@@ -1,5 +1,4 @@
 import useAuth from "../../hooks/use-auth";
-import prisma from "../../library/prisma";
 
 const getUser = async ({ email }: { email: string | undefined | null }) => {
   const user = await prisma.user.findUnique({

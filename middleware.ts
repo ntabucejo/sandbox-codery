@@ -15,10 +15,12 @@ const middleware = (request: NextRequestWithAuth) => {
   }
 };
 
-export default withAuth(middleware, { callbacks: { authorized: () => true } });
+export default withAuth(middleware, {
+  callbacks: { authorized: () => true },
+});
 
 export const config = {
-  matcher: ["/dashboard:path*", "/account", "/sign-in/:path*", "/seller"],
+  matcher: ["/dashboard/:path*", "/account", "/sign-in/:path*", "/seller"],
 };
 
 // http://localhost:3000/sign-in
