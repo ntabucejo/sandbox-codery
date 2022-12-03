@@ -6,6 +6,7 @@ import UserInformation from "./user-information";
 const Page = async () => {
   const session = await useAuth();
   const x = "123";
+  const y = "123";
   return (
     <div>
       <h1>Home</h1>
